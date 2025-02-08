@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IWF Entry Form</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        .container {
+            width: 95%;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 8px;
+            margin:10px;
+        }
+
+        .form-card {
+            padding: 20px;
+        }
+
+        .form-card h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        input, select {
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            position:absolute;
+            right:20%;
+            margin-top:-3%;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+
+        
+
+        .form-card .alert {
+            margin-top: 10px;
+            color: #28a745;
+            font-size: 14px;
+            text-align: center;
+        }
+        .form-card{
+            top:12%;
+            position:absolute;
+            width:60%;
+            background:white;
+            background-color:transparent;
+            border-radius: 14px;
+            font-family: Arial, sans-serif;
+            left:50%;
+            transform:translateX(-50%);
+        }
+        .icons{
+            position:absolute;
+            right:5%;
+        }
+        .icons a img{
+            padding:3px;
+            height:30px;
+    -webkit-filter: brightness(.1);
+    filter: brightness(.1);
+        }
+        label{
+            font-size:20px
+        }
+        #menu{
+            width:100%;
+            height:50px;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color:rgb(236, 236, 236);
+            padding:0px;
+            text-align:center;
+            padding:30px;
+            
+        }
+        body{
+            background:rgb(221, 217, 249);
+            overflow-x:hidden;
+        }
+        #menu a{
+            font-size:14px;
+            padding:10px;
+            color: rgb(73, 50, 252);
+        }
+        #menu a:hover,#active{
+            font-size:16px;
+            padding:12px;
+            text-decoration:underline 1.5px;
+        }
+        #logo-menu{
+            background-color:transparent;
+            top:0%;
+            position:absolute
+
+        }
+        #button{
+            background-color: blue;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            width:100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media  screen and (max-width:1200px) {
+            .form-card{
+                width:70%;
+            }
+        }
+        @media  screen and (max-width:1030px) {
+            .form-card{
+                width:82%;
+            }
+        }
+        @media  screen and (max-width:890px) {
+            label{
+                font-size:16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id='menu'>
+        <div id="nav-bar" style='background:transparent;width:300px;box-shadow:0 0 0 0;border:0' >
+            <div style='overflow:hidden;background:transparent' id='logo'><a><h1>SMART</h1><h2>FORMS</h2></a></div></div>
+        <a id='active' onclick="window.location.href='{{id}}/forms'" >Edit Form</a>
+        <a href='' onclick="window.location.href='{{id}}/form-responses'">Form Responses</a>
+        <a id='button' onclick="window.location.href='{{id}}/share-form'" style='color:white'>Send</a>
+    </div>
+        
+        <div class="form-card">
+            <h1>Form</h1>
+            <form action="" method="POST">
+                <div class="input-group">
+                {% for i in data %}
+                <div class="container">
+                <table>
+                    {% if i.type == "options"  %}
+                    <td><label>{{ i.Question }}: </label></td>
+                    <td><select name="{{ i.Question }}" required>
+                        <option value="0">Select</option>
+                        {% for j in i.options %}
+                        <option value="{{ j }}">{{ j }}</option>
+                        {% endfor %}
+                    </select></td>
+                    <td class='icons'><a href='/{{i.Question}}/edit' ><img src='../static/images/edit.png'></a>
+                    <a href='/{{i.Question}}/delete' id='delete'><img src='../static/images/delete.png'></a></td>
+                    {% else %}
+                    {%if i.type == "title"%}
+                    <td><h1 style='margin:0'>Title: {{i.Question}}</h1></td>
+                    <td class='icons'><a href='/{{i.Question}}/edit' ><img src='../static/images/edit.png'></a></td>
+                    {%elif i.type == "h2"%}
+                    <td><h2>{{i.Question}}</h2></td>
+                    <td class='icons'><a href='/{{i.Question}}/edit' ><img src='../static/images/edit.png'></a></td>
+                    {%else%}
+                    <td><label >{{ i.Question }}: </label></td>
+                    <td><input type="{{ i.type }}" name="{{ i.Question }}"  placeholder='{{ i.type }}'required></td>
+                    <td class='icons'><a href='/{{i.Question}}/edit'><img src='../static/images/edit.png'></a>
+                    <a href='/{{i.Question}}/delete' id='delete'><img src='../static/images/delete.png'></a></td>
+                    </div>
+                    {%endif%}
+                    {% endif %}
+            </table>
+                </div>
+                    {% endfor %}
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent actual form submission for demonstration
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Pilot</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<section id='menu'>
+    <div id="background">
+    </div>
+    <img id="menu-icon" onclick=open_() alt="Menu" src="./static/images/menu-icon.png">
+    <div id="menu-bar">
+        <img id="close-icon" onclick=close_() alt="Close" src="./static/images/close.png">
+        <ul><li><a href="" title="Home"> HOME</a></li></ul>
+        <ul><li ><a href="" title="Events"> Templates</a></li></ul>                
+        <ul><li><a href="" title="Our Services">OUR Features</a></li></ul>
+        <ul><li><a href="" title="About Us">ABOUT US</a></li></ul>
+        <ul><li><a href="" title="Contact Us">CONTACT US</a></li></ul>
+    </div>
+    <div id="nav-bar">
+        <div id='logo'><a><h1>SMART</h1><h2>FORMS</h2></a></div>
+        <div id="none">
+            <ul id="active"><li><a href="" title="Home"> HOME</a></li></ul>
+            <ul><li ><a href="#our-services" title="Events"> TEMPLATES</a></li></ul>                
+            <ul><li><a href="#why" title="Our Services">OUR FEATURES</a></li></ul>
+        <ul><li><a href="#about-us" title="About Us">ABOUT US</a></li></ul>
+        </div>
+        <div id="join">
+            <ul><li><a href="/sign-in" title="Signin">SIGN IN</a></li></ul>
+            <ul id="join-now"><li><a href="/register" title="Our Services">REGISTER NOW!</a></li></ul>
+        </div>
+    </div>
+    <div id='signin'>
+
+        <h2>Sign In</h2>
+        <form  method="post" action="/sign-in" id="form">
+            {%if data == 2%}
+            <h4 style='color:red'>Wrong Password</h4>
+            {%endif%}
+            {%if data == 3%}
+            <h4 style='color:red'>Wrong username</h4>
+            {%endif%}
+            {%if data == 4%}
+            <h4 style='color:red'>Please Do Register</h4>
+            {%endif%}
+            <label>Email</label><br>
+            <input type="username" requried name="username" id="username" placeholder="Enter your Email"><br><br><br>
+            <label>Password</label><br>
+            <input type="password" requried name="password" id="passwd" placeholder="Password"><br><br><br>
+            <button type="submit" class='button'>Sign in</button>
+        </form><br><br>
+        <p>Don't have an account?<a href='/register'>Register</a></p>
+    </div>
+    <div id="footer">
+        <div class="services">
+            <div class="row">
+                <h1><a>Contact Us</a></h1>
+                <h3><a>Email: nitinpateri1@gmail.com</a></h3>
+            </div>
+            <div class="row"> 
+                <h1><a>Quick Links</a></h1>
+                <h3><a>Sign IN</a></h3>
+                <h3><a>Register</a></h3>
+                <h3><a>Our Services</a></h3>
+            </div>
+            <div class="row">
+                <h1>More Info</h1>
+                <h3><a>Privacy Policy</a></h3>
+                <h3><a>Terms and Conditions</a></h3>
+            </div>
+        </div>
+    </div>
+</section>
+    <script>
+        let signin=document.getElementById('signin')
+        let register=document.getElementById('Register')
+        function Register(){
+            signin.style.display='none'
+            register.style.display='block'
+        }
+        function Signin(){
+            signin.style.display='block'
+            register.style.display='none'
+        }
+        function functions(){
+            alert("Need to login first")
+        }
+    </script>
+</body>
+
+</html>

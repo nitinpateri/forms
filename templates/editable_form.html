@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question-list {
+            margin: 20px 0;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .question span {
+            flex: 1;
+        }
+
+        .question-actions button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-edit {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: #fff;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Question Manager</h1>
+        <div class="question-list" id="question-list">
+            <!-- Dynamic questions will be added here -->
+        </div>
+
+        <form id="question-form">
+            <div class="form-group">
+                <label for="question-text">Question Text</label>
+                <input type="text" id="question-text" required>
+            </div>
+            <div class="form-group">
+                <label for="question-type">Question Type</label>
+                <select id="question-type" required>
+                    <option value="text">Text</option>
+                    <option value="number">Number</option>
+                    <option value="date">Date</option>
+                    <option value="select">Dropdown</option>
+                    <option value="textarea">Textarea</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="question-options">Options (comma-separated, for dropdown)</label>
+                <input type="text" id="question-options" placeholder="E.g., Option1, Option2">
+            </div>
+            <button type="submit">Add Question</button>
+        </form>
+    </div>
+
+    <script>
+        // Select elements
+        const questionList = document.getElementById('question-list');
+        const questionForm = document.getElementById('question-form');
+        const questionTextInput = document.getElementById('question-text');
+        const questionTypeInput = document.getElementById('question-type');
+        const questionOptionsInput = document.getElementById('question-options');
+
+        // Array to store questions
+        let questions = [];
+
+        // Function to render questions
+        function renderQuestions() {
+            questionList.innerHTML = '';
+            questions.forEach((question, index) => {
+                const questionItem = document.createElement('div');
+                questionItem.classList.add('question');
+                questionItem.innerHTML = `
+                    <span>${question.text} (${question.type})</span>
+                    <div class="question-actions">
+                        <button class="btn-edit" onclick="editQuestion(${index})">Edit</button>
+                        <button class="btn-delete" onclick="deleteQuestion(${index})">Delete</button>
+                    </div>
+                `;
+                questionList.appendChild(questionItem);
+            });
+        }
+
+        // Function to add a question
+        questionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = questionTextInput.value;
+            const type = questionTypeInput.value;
+            const options = questionOptionsInput.value;
+
+            const newQuestion = { text, type, options };
+            questions.push(newQuestion);
+
+            questionTextInput.value = '';
+            questionTypeInput.value = 'text';
+            questionOptionsInput.value = '';
+
+            renderQuestions();
+        });
+
+        // Function to delete a question
+        function deleteQuestion(index) {
+            questions.splice(index, 1);
+            renderQuestions();
+        }
+
+        // Function to edit a question
+        function editQuestion(index) {
+            const question = questions[index];
+            questionTextInput.value = question.text;
+            questionTypeInput.value = question.type;
+            questionOptionsInput.value = question.options;
+
+            // Remove the current question and re-add on submit
+            questions.splice(index, 1);
+        }
+
+        // Initial render
+        renderQuestions();
+    </script>
+</body>
+</html>

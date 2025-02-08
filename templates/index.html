@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+    <title>Prime Pro</title>
+</head>
+<body>
+    <section id='menu'>
+        <div id="background">
+        </div>
+        <img id="menu-icon" onclick=open_() alt="Menu" src="./static/images/menu-icon.png">
+        <div id="menu-bar">
+            <img id="close-icon" onclick=close_() alt="Close" src="./static/images/close.png">
+            <ul><li><a href="" title="Home"> HOME</a></li></ul>
+            <ul><li ><a href="" title="Events"> Templates</a></li></ul>                
+            <ul><li><a href="" title="Our Services">OUR Features</a></li></ul>
+            <ul><li><a href="" title="About Us">ABOUT US</a></li></ul>
+            <ul><li><a href="" title="Contact Us">CONTACT US</a></li></ul>
+        </div>
+        <div id="nav-bar">
+            <div id='logo'><a><h1>SMART</h1><h2>FORMS</h2></a></div>
+            <div id="none">
+                <ul id="active"><li><a href="" title="Home"> HOME</a></li></ul>
+                <ul><li ><a href="#our-services" title="Events"> TEMPLATES</a></li></ul>                
+                <ul><li><a href="#why" title="Our Services">OUR FEATURES</a></li></ul>
+            <ul><li><a href="#about-us" title="About Us">ABOUT US</a></li></ul>
+            </div>
+            <div id="join">
+                <ul><li><a href="/sign-in" title="Signin">SIGN IN</a></li></ul>
+                <ul id="join-now"><li><a href="/register" title="Our Services">REGISTER NOW!</a></li></ul>
+            </div>
+        </div>
+        <div id="main-content">
+            <h1>Effortless Forms.<br> Smarter Data Collection.</h1>
+        </div>
+        <div id="text-content">
+            <p>Our Online Forms Platform allows you to create, share, and analyze forms effortlessly. Whether you need surveys, feedback forms, or data collection tools, our platform provides dynamic question logic, real-time analytics, and secure data storage. With support for multiple question types, file uploads, and seamless Google Sheets integration, you can streamline data collection like never before.
 
+                </p>
+        </div>
+    </section>
+    <section id="our-services">
+        <div id="top-heading">
+            <h1>OUR SERVICES</h1>
+            <h3>See what we have to offer !</h3>
+        </div>
+        <div id='templates'>
+    <h1>Templates</h1>
+        <div class="services">
+            <div class="row">
+                <div class='wall' ><h2>Blank Form</h2></div>
+            </div>
+            <div class="row">
+                <div class='wall' ><h2>Training Programs</h2></div>
+            </div>
+            <div class="row">
+                <div class='wall' ><h2>Sports Marketing</h2></div>
+                <br>
+            </div>
+            <div class="row">
+                <div class='wall' ><h2>Live Streaming</h2></div>
+                
+            </div>
+        </div>
+    </div>
+        </div>
+        <div id="why">
+            <h1>Why choose us?</h1>
+            <div class="services">
+                <div class="row"><h1>Real-Time Analytics</h1><p>Track responses live with interactive dashboards and insights</p></div> <br>
+                <div class="row"><h1> Secure & Role-Based Access</h1><p> Control who can create, view, and manage forms with advanced permissions.</p></div><br>
+                <div class="row"><h1>Multiple Question Types</h1><p>Support for text inputs, MCQs, dropdowns, file uploads, and more. </p></div><br>
+                <div class="row"><h1>File Upload Support</h1><p> Allow users to submit images, PDFs, and other documents securely.</p></div>
+            </div>
+            
+        </div>
+        <div id="about-us">
+            <div>
+                <h1>ABOUT US</h1>
+                <p>Empowering Smarter Data Collection
+                    We are a team of innovators passionate about simplifying data collection. Our mission is to provide a fast, secure, and intelligent online forms platform that enables users to create dynamic forms with conditional logic, real-time analytics, and seamless integrations.
+                    
+                    Whether you're conducting surveys, gathering feedback, or managing large-scale data collection, our platform ensures a hassle-free experience with a focus on efficiency, security, and scalability.
+                    
+                    Join us in redefining how data is collected and analyzed – Smarter Forms, Smarter Insights! 🚀</p>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="services">
+                <div class="row">
+                    <h1>Contact Us</h1>
+                    <h3>Email: nitinpateri1@gmail.com</h3>
+                </div>
+                <div class="row"> 
+                    <h1>Quick Links</h1>
+                    <h3><a>Sign IN</a></h3>
+                    <h3><a>Register</a></h3>
+                    <h3><a>Our Services</a></h3>
+                </div>
+                <div class="row">
+                    <h1>More Info</h1>
+                    <h3><a>Privacy Policy</a></h3>
+                    <h3><a>Terms and Conditions</a></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+<script>
+    menu_ = document.getElementById('menu-icon')
+    nav_ = document.getElementById('menu-bar')
+    function open_(){
+        menu_.style.display='none'
+        nav_.style.display='inline'
+    }
+    function close_(){
+        menu_.style.display='block'
+        nav_.style.display='none'
+    }
+    function getRandomColor() {
+        return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    }
+    let wall = document.getElementsByClassName("wall")
+    for(var i=0;i<wall.length;i++){
+        wall[i].style.backgroundColor = getRandomColor();
+    }
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Pilot</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<section id='menu'>
+    <div id="nav-bar">
+        <div id='logo'><a><h1>SMART</h1><h2>FORMS</h2></a></div>
+        
+        <div id="join">
+            <ul id="join-now"><li><a style='margin-top:-10px' href="/register" title="Our Services"><img style='padding:10px' src='../static/images/account.png'></a></li></ul>
+        </div>
+    </div>
+</section>
+<div id='templates'>
+    <h1>Create a form using templates</h1>
+    <div class="services">
+        {%for i in data[0]%}
+        <div class="row">
+            <a href='create-form/{{i}}'><div class='wall' ><h2>{{i}}</h2></div></a>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+<div id='recent'>
+    <h1>Recently Created</h1>
+    <div class="services">
+        {%for i in data[1]%}
+        
+        {%if i != [] %}
+        <div class="row">
+            <a href='{{i[0]}}/form'> <div class='wall' ><h2>{{i[1]}}</h2></div></a>
+        </div>
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+
+    <script>
+        let signin=document.getElementById('signin')
+        let register=document.getElementById('Register')
+        function Register(){
+            signin.style.display='none'
+            register.style.display='block'
+        }
+        function Signin(){
+            signin.style.display='block'
+            register.style.display='none'
+        }
+        function functions(){
+            alert("Need to login first")
+        }
+        function getRandomColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        }
+        let wall = document.getElementsByClassName("wall")
+        for(var i=0;i<wall.length;i++){
+            wall[i].style.backgroundColor = getRandomColor();
+        }
+    </script>
+</body>
+
+</html>
