@@ -1,1 +1,750 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+#background{
+  height:85vh;
+  width: 100%;
+  background-repeat: no-repeat; 
+    background-size: cover; 
+  overflow: hidden;
+  background-image: url(./images/bg1.png);
+  
+  -webkit-filter: brightness(.7);
+  filter: brightness(.7);
+}
+#nav-bar{
+  display: flex;
+  width:100%;
+  height: 80px;
+  top:0%;
+  left:0%;
+  position: fixed;
+  background: rgba(255, 255, 255, 1);
+  z-index: 3;;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 1px 1px 2px 2px black;
+
+}
+#none{
+  display: flex;
+}
+#logo{
+  margin-left: 15px;
+}
+#logo h1{
+  text-shadow: 0px 2px  rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 38.73px;
+  text-align: left;
+
+}
+#logo h2{
+  font-family: Inter;
+font-size: 20px;
+font-weight: 400;
+line-height: 24.2px;
+letter-spacing: 0.38em;
+
+}
+#nav-bar li,#none {
+  list-style: none;
+  top:50%;
+  position: relative;
+  transform: translate(0,-50%);
+}
+#nav-bar li a{
+  text-decoration: none;
+  color:black;
+  font-size: 20px;
+  margin:30px ;
+  font-style: inter;
+}
+#join{
+  display: flex;
+  right: 0%;
+  position: absolute;
+  top:50%;
+  transform: translate(0,-50%);
+}
+#active,#nav-bar ul:hover{
+  border-bottom: 7px solid #000;
+  font-weight: bolder;
+  cursor: pointer;
+}
+#join-now{
+  background: rgba(54, 54, 54, 1);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+#join-now li a{
+  color: white;
+}
+#menu-bar,#menu-icon{
+  top:15%;
+  position: absolute;
+  z-index: 3;
+  color: black;
+  right: 2%;
+  background: white;
+}
+#menu-bar{
+  display: none;
+}
+#menu-bar li a{
+  text-decoration: none;
+  color:black;
+  font-size: 20px;
+  font-style: inter;
+}
+#menu-bar li {
+  margin:20px ;
+}
+#close-icon{
+  -webkit-filter: brightness(.001);
+  filter: brightness(.001);
+  height: 40px;
+}
+#menu-icon{
+  display: none;
+  height: 40px;
+}
+@media screen and (max-width:1250px) {
+  #nav-bar li a{
+    margin:20px ;
+  }
+
+}
+@media screen and (max-width:1120px) {
+  #nav-bar li a{
+    margin:15px ;
+  }
+}
+@media screen and (max-width:1050px) {
+  #nav-bar li a{
+    margin:10px ;
+  }
+}
+@media screen and (max-width:990px) {
+  #nav-bar li a{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:920px) {
+  #nav-bar li a{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width:855px) {
+  #logo h1{
+    font-size: 22px;
+  
+  }
+  #logo h2{
+  font-size: 14px;
+  }
+}
+@media screen and (max-width:800px) {
+  #none{
+    display: none;
+  }
+  #menu-icon{
+    display: block;
+    padding: 1.5%;
+    background-color: black;
+  }
+}
+/*----MAIN CONTENT----*/
+#main-content h1{
+  font-family: Alfa Slab One;
+  font-size: 56px;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  top:75%;
+  position: absolute;
+  margin-left: 3%;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.25);z-index: 2;
+}
+#main-content h2{
+  font-family: Alfa Slab One;
+font-size: 36px;
+font-weight: 400;
+line-height: 49.28px;
+text-align: left;
+color: rgba(255, 255, 255, 1);
+  top:91%;
+  position: absolute;
+  margin-left: 3%;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+
+}
+#text-content{
+  height: 28vh;
+  background-color: #000;
+  top:72%;
+  position: absolute;
+  z-index: 1;
+}
+#text-content p{
+  font-family: Antic;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.58px;
+  text-align: justify;
+  color: white;
+  width:40%;
+  top:44%;
+  left:75%;
+  transform: translate(-50%,-50%);
+  position: relative;
+}
+@media screen and (max-width:1400px){
+  #main-content h1{
+    font-size: 56px;
+  }
+  #main-content h2{
+    font-size: 30px;
+  }
+  #text-content p{
+    font-size: 22px;
+    width:45%;
+  }
+}
+@media screen and (max-width:1210px){
+  #main-content h1{
+    font-size: 50px;
+  }
+  #main-content h2{
+    font-size: 27px;
+  }
+  #text-content p{
+    font-size: 20px;
+    width:45%;
+  }
+}
+@media screen and (max-width:1130px){
+  #main-content h1{
+    font-size: 48px;
+  }
+  #main-content h2{
+    font-size: 23px;top:85%
+  }
+  #text-content p{
+    font-size: 20px;
+    width:45%;
+  }
+  #text-content{
+    height: 30vh;
+    top:70%
+  }
+}
+@media screen and (max-width:950px){
+  #main-content h1{
+    font-size: 45px;
+  }
+  #main-content h2{
+    font-size: 20px;
+  }
+  #text-content p{
+    line-height: 22.58px;
+  }
+}
+@media screen and (max-width:830px){
+  #main-content h1{
+    top:45%
+  }
+  #main-content h2{
+    top:70%
+  }
+  #text-content p{
+    width:93%;
+    left: 3%;
+    transform: translate(0%,0%);
+    top:20%;
+  }
+}
+@media screen and (max-width:730px){
+  #main-content h1{
+    top:31%;
+    font-size: 35px;
+  }
+  #main-content h2{
+    top:50%
+  }
+  #text-content {
+    top:50%;
+  }
+  #background{
+    height: 75vh;
+  }
+}
+
+@media screen and (max-width:420px){
+  #main-content h1{
+    top:18%;
+    font-size: 25px;
+  }
+  #main-content h2{
+    top:35%;
+    font-size:18px;
+  }
+  #text-content {
+    top:35%;
+  }
+  #text-content p{
+    font-size:16px;
+  }
+}
+@media screen and (max-width:380px){
+  #main-content h2{
+    top:35%;
+    font-size:0px;
+  }
+  #background{
+    height: 50vh;
+  }
+  #text-content {
+    top:45%;
+  }
+  #our-services{
+    top:90%;
+    position: absolute;
+  }
+}
+@media screen and (max-width:320px){
+  #text-content p{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:250px){
+  #text-content {
+    height: 36vh;
+  }
+}
+@media screen and (max-height:600px){
+  #main-content h1{
+    top: 50%;
+  }
+  #text-content {
+    height: 30vh;
+  }
+  #text-content p{
+    font-size: 18px;
+  }
+}
+@media screen and (max-height:600px){
+  #main-content h1{
+    top: 45%;
+  }
+  #text-content {
+    height: 32vh;
+  }
+  #text-content p{
+    font-size: 16px;
+    line-height: normal;
+  }
+}
+@media screen and (max-height:420px){
+  #main-content h1{
+    top: 40%;
+    font-size: 44px;
+  }
+  #main-content h2{
+    top: 87%;
+    font-size: 25px;
+  }
+}
+@media screen and (max-height:365px) {
+  #main-content h1{
+    font-size: 42px;
+  }
+  #main-content h2{
+    font-size: 20px;
+  }
+}
+@media screen and (max-height:425px) and (max-width:1005px) {
+  #main-content h1{
+    font-size: 35px;
+  }
+  #main-content h2{
+    font-size: 18px;
+  }
+  #text-content p{
+    font-size: 14px;
+  }
+}
+@media screen and (max-height:365px) and (max-width:875px) {
+  #main-content h1{
+    font-size: 35px;
+  }
+  #main-content h2{
+    font-size: 18px;
+  }
+  #text-content p{
+    font-size: 14px;
+  }
+}
+@media screen and (max-height:650px) and (max-width:830px) {
+  #main-content h1{
+    top:35%;
+  }
+  #text-content {
+    top:70%;
+    height:25vh;
+  }
+  #main-content h2{
+    display: none;
+  }
+}
+@media screen and (max-height:650px) and (max-width:730px) {
+  #main-content h1{
+    top:35%;
+  }
+  #text-content {
+    top:60%;
+    height:25vh;
+  }
+}
+@media screen and (max-height:435px) and (max-width:830px) {
+  #main-content h1{
+    top:35%;font-size: 22px;
+  }
+  #main-content h2{
+    top:60%;
+    font-size: 16px;
+    display: block
+  }
+  #text-content {
+    top:75%;
+    height:25vh;
+  }
+}
+/*----Our services-----*/
+
+#our-services{
+  position: relative;
+  margin-top: 50px;
+  min-height: 130vh;
+}
+#top-heading h1{
+  font-family: Alfa Slab One;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 87.62px;
+  text-align: center;
+  color: rgba(62, 62, 62, 1);overflow: hidden;
+}
+#top-heading h3{
+  font-family: Antic;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38.11px;
+  text-align: center;
+}
+.services{
+  position: relative;
+  left:50%;
+  transform: translate(-50%,0%);
+  display:flex;
+  flex-wrap: wrap;
+  width: 80%;overflow: hidden;
+}
+.row{
+  text-align: center;
+  width:20%;
+	margin: 2.5%;
+  flex:1 1 200px;
+  
+}
+.row img{
+  padding: 0px;
+  margin-bottom: 6px;
+  height: 90px;
+  width: 90px;
+}
+#templates{
+  margin-top:5%;
+  padding:10px;
+  background-color: #aba8a8;
+  height:45vh;
+  overflow:hidden
+}
+.wall {
+  width: 230px ; /* Adjust based on N */
+  height: 15vh; /* Adjust based on N */
+  background-image: url("./images/cracks.jpg"); /* Cracked texture */
+  background-size: cover;
+  background-blend-mode: multiply; /* Blend texture with random color */
+  border-radius: 10px;overflow: hidden;
+}
+.wall h2{
+  margin-top:10.4vh;
+  width:100%;
+  font-size: 20px;;
+  background-color: white;
+  padding: 6px;
+  overflow: hidden;
+}
+#templates h1,#recent h1{
+  padding-top:3%;
+  padding-left: 10%;
+}
+.row h1{
+  font-family: Inter;
+font-size: 20px;
+font-weight: 600;
+line-height: 24.2px;
+width: 100%;
+}
+.row p{
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: center;
+}
+#why h1{
+  font-family: Alfa Slab One;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 87.62px;
+  color: rgba(62, 62, 62, 1);
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+#why div h1{
+  font-family: Inter;
+font-size: 20px;
+font-weight: 800;
+line-height: 30.26px;
+padding-right: 10px;
+}
+#why div div{
+  box-shadow: 2px 2px 4px 4px grey;
+  padding: 15px;
+  margin: 2%;
+}
+@media screen and (max-width:600px) {
+  #top-heading h1{
+    font-size: 35px;
+  }
+  #top-heading h3{
+    font-size: 22px;
+  }
+  #our-services{
+    top:70%;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width:385px) {
+  #our-services{
+    top:90%;
+  }
+}
+@media screen and (max-width:725px) {
+  #our-services{
+    margin-top: 70px;
+  }
+  #why h1{
+    font-size: 35px;
+  }
+}
+/*-----About Us------*/
+#about-us{
+  margin-top: 50px;
+  background: rgba(62, 62, 62, 1)  ;
+  color:  rgba(255, 255, 255, 1);
+  display: flex;text-align: center;
+  padding: 5%;
+
+}
+#about-us div h1{
+  font-family: Inter;
+font-size: 48px;
+font-weight: 400;
+line-height: 58.09px;text-align: center;
+padding-bottom: 3%;
+}
+#about-us div p{
+  font-family: Inter;
+font-size: 18px;
+font-weight: 400;
+line-height: 38.73px;
+text-align: center;
+}
+
+#news-letter div{
+  position: relative;
+  top:50%;
+  left:50%;
+  text-align: center;
+  transform: translate(-50%,0%);
+  background-image: url('./images/news-letter.png');
+  min-height: 70vh;
+  overflow: hidden;
+  margin-top: 20px;
+}
+#news-letter h1{
+  color:white;
+  font-family: Alfa Slab One;
+font-size: 64px;
+font-weight: 400;
+line-height: 87.62px;
+padding-bottom: 30px;
+text-align: center;
+margin-top: 100px;
+
+}
+#news-letter p{
+  font-family: Antic;
+font-size: 24px;
+font-weight: 400;
+line-height: 28.58px;
+text-align: center;
+color: white;
+padding-bottom: 30px;
+}
+#news-letter form{
+  display: flex;
+  left:65%;
+  transform: translate(-50%,0);
+  position: relative;
+}
+#news-letter form input{
+  width: 20%;
+  height: 55px;
+  border-radius: 6px 0px 0px 0px;
+  border: 2px 0px 0px 0px;
+  opacity: 0px;
+  margin-left: 20px;
+  background: transparent;
+  padding-left: 2%;
+  margin-right: 15px;
+  color: white;
+}
+#news-letter form input::placeholder{
+  color: white;
+}
+#news-letter form button{
+  width: 20%;
+  height: 55px;
+  gap: 0px;
+  opacity: 0px;
+}
+#footer{
+  background: rgba(23, 23, 23, 1);
+
+  color: rgba(255, 255, 255, 1);
+  text-align: left;
+  margin-top: 20px;
+}
+#footer div div h1{
+  font-family: Inter;
+font-size: 38px;
+font-weight: 500;
+line-height: 58.09px;
+text-align: left;
+}
+#footer div div h3{
+  font-family: Inter;
+font-size: 18px;
+font-weight: 300;
+line-height: 29.05px;
+text-align: left;
+}
+#footer div{
+  width:100%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+#footer div div{
+  margin: 1%;
+}
+@media screen and (max-width:520px){
+  #background{
+    height: 59vh;
+  }
+  #main-content h1{
+    top:22%;
+    font-size: 30px;
+  }
+  #main-content h2{
+    top:40%;
+    width: 100%;
+  }
+  #text-content {
+    width: 100%;
+    top:40%;
+  }
+  #menu{
+    width:100vh
+  }
+  #news-letter h1{
+    font-size: 32px;
+  }
+}
+@media screen and (max-width:380px){
+  #our-services {
+    top:60%;
+    font-size: 30px;
+  }
+}
+/*-----Sign in-----*/
+
+#signin{
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  background-color: rgba(253, 250, 250, 0.817);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 40%;
+  padding: 5%;
+  padding-top: 0%;
+  border-radius: 15px;
+  min-width: 300px;
+}
+#signin h2{
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 58.09px;
+  text-align: center;
+  text-decoration: underline;
+  color:rgb(112, 112, 248);
+}
+#signin input,#signin select{
+  width: 95%;
+  border-radius: 10px;
+  height: 45px;
+  min-width: 250px;
+}
+#signin label {
+  font-family: Inter;
+font-size: 22px;
+font-weight: 500;
+line-height: 38.73px;
+text-align: left;
+padding: 3%;
+padding-left: 0px;
+}
+#signin button{
+  width: 95%;
+  height: 50px;
+  color: white;
+  background-color: rgb(36, 35, 35);
+  border-radius: 10px;
+  font-family: inter;
+  font-size: 20px;
+  cursor: pointer;
+}
 
