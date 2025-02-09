@@ -34,7 +34,7 @@ global username
 global passwd
 #connection
 client = pymongo.MongoClient(
-  'mongodb+srv://nitinpateri1:passwd123@cluster0.jmo22.mongodb.net/?retryWrites=true&w=majority'
+  'mongodb+srv://<username>:<password>@cluster0.jmo22.mongodb.net/?retryWrites=true&w=majority'
 )
 mydb = client['survey']
 mycol = mydb['userdata']
